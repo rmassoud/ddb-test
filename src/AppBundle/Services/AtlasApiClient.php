@@ -4,13 +4,16 @@ namespace AppBundle\Services;
 
 use GuzzleHttp\Client;
 
+/**
+ * Class AtlasApiClient
+ * @package AppBundle\Services
+ */
 class AtlasApiClient
 {
     const REGIONS_URL = 'regions';
     const AREAS_URL = 'areas';
     const SEARCH_URL = 'products';
     const GET_PRODUCT_URL = 'product';
-
     const PAGE_SIZE = 25;
 
     /**
