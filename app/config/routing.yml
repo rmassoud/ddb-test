@@ -1,0 +1,24 @@
+app:
+  path: /
+  defaults:
+    _controller: AppBundle:Default:index
+
+regions_data:
+  path: /regions-data
+  defaults:
+    _controller: AppBundle:Default:getRegions
+
+areas_data:
+  path: /areas-data
+  defaults:
+    _controller: AppBundle:Default:getAreas
+
+search_data:
+  path: /search-data
+  defaults:
+    _controller: AppBundle:Default:search
+
+product:
+    path: /products/{id}
+    defaults:
+        _controller: AppBundle:Product:view

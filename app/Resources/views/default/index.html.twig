@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container" id="app">
+
+        <select id="regions" v-model="currentRegion" @change="filterChange">
+            <option value="">-- select region --</option>
+            {% for region in regions %}
+                <option value="{{ region.RegionId }}">{{ region.Name }}</option>
+            {% endfor %}
+        </select>
+
+        <select id="areas" v-model="currentArea" @change="filterChange">
+            <option value="">-- select area --</option>
+            {% for area in areas %}
+                <option value="{{ area.AreaId }}">{{ area.Name }}</option>
+            {% endfor %}
+        </select>
+
+        <h3>Found ${results} product</h3>
+        <h4 v-if="results > 0">Page ${currentPage} of ${numberOfPages} </h4>
+
+        <ul>
+            <li v-for="product in products">
+                <a :href="'products/' + product.productId">${product.productName}</a>
+            </li>
+        </ul>
+
+        <div v-if="results > 25">
+            <button v-if="currentPage > 1" @click="currentPage -= 1">prev</button>
+            <button v-if="currentPage < numberOfPages" @click="currentPage += 1">next</button>
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}

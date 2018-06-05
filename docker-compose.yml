@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  php:
+    build: docker/php-apache
+    ports:
+      - '9090:80'
+    volumes:
+      - ./:/var/www/app:cached

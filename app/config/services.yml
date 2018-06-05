@@ -1,0 +1,5 @@
+services:
+  atlas_api_client:
+    class: AppBundle\Services\AtlasApiClient
+    arguments:
+      - '%atlas_api_key%'
