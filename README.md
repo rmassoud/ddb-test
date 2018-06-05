@@ -10,3 +10,4 @@ Run dockerized containers
 ```bash
 docker-compose up
 ```
+Now access the app on [http://localhost:9090/](http://localhost:9090/)
